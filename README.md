@@ -1,6 +1,6 @@
 # Flask_A1
 
-git branch 性
+git branch 苗字
 
 git switch　苗字
 
