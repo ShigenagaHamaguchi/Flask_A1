@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="/login" method="post">
+    <div class="mb-3">
+        <label for="InputTitle" class="form-label">ユーザ名</label>
+        <input type="text" class="form-control" id="InputTitle" name="username" placeholder="ユーザ名を入力">
+    </div>
+    <div class="mb-3">
+        <label for="InputPassword1" class="form-label">パスワード</label>
+        <input type="password" class="form-control" id="InputPassword1" name="password" placeholder="パスワードを入力">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">送信</button>
+</form>
+
+{% endblock %}
