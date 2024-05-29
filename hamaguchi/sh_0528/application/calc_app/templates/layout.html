@@ -26,23 +26,10 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Flask Blog</a>
+            <a class="navbar-brand" href="/">Salary Calc</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    {% if not session.logged_in %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url_for('login')}}  ">ログイン</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url_for('logout')}}">ログアウト</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
         </div>
     </nav>
     {% for message in get_flashed_messages() %}

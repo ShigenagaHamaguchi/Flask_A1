@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form action="/login" method="post">
+<form action="{{url_for('login')}} " method="post">
     <div class="mb-3">
         <label for="InputTitle" class="form-label">ユーザ名</label>
         <input type="text" class="form-control" id="InputTitle" name="username" placeholder="ユーザ名を入力">

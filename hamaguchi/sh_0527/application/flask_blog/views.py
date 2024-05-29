@@ -1,5 +1,5 @@
 from flask_blog import app
-from flask import render_template,request,redirect,session,flash
+from flask import render_template,request,redirect,session,flash,url_for
 
 
 @app.route("/")
@@ -8,7 +8,8 @@ def show_entries():
     試しのレンダリング
     """
     if not session.get("logged_in"):
-        redirect("login")
+        redirect(url_for("login"))
+
     return render_template("entries/index.html")
 
 @app.route("/login",methods=["POST"])
@@ -26,14 +27,14 @@ def login():
     else:
         session["logged_in"] = True
         flash("ログインしました")
-        return redirect("/")
+        return redirect(url_for("show_entries"))
     return render_template("entries/login.html")
 
 @app.route("/logout")
 def logout():
     session.pop("logged_in",None)    
     flash("ログアウトしました")
-    return redirect("/")
+    return redirect(url_for(show_entries))
 
 @app.route("/login",methods=["GET"])
 def show_login():
