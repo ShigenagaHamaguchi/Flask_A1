@@ -1,5 +1,18 @@
 {% extends "layout.html" %}
 
 {% block body %}
-投稿がありません
+<ul class="list-group list-group-flush">
+    {% for entry in entries%}
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-body-title">{{entry.title}}</h5>
+            <a href="{{url_for('show_entry',id=entry.id)}}" class="card-link">続きを読む</a>
+            <a href="{{url_for('show_edit',id=entry.id)}}" class="card-link">編集</a>
+        </div>
+    </div>
+    {% else %}
+    投稿がありません
+    {% endfor %}
+</ul>
 {% endblock %}

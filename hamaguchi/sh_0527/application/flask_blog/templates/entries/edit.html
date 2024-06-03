@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="{{url_for('edit',id=entry.id)}} " method="post">
+    <div class="mb-3">
+        <label for="InputTitle" class="form-label">タイトル</label>
+        <input type="text" class="form-control" id="InputTitle" name="title" value="{{entry.title}}"
+            placeholder="ブログタイトルを入力">
+    </div>
+    <div class="mb-3">
+        <label for="InputText" class="form-label">本文</label>
+        <input type="text" class="form-control" id="InputText" name="text" value="{{entry.text}}"
+            placeholder="ブログ本文を入力">
+    </div>
+
+    <a class="btn btn-primary btn-block" href="{{url_for('show_entries')}}">戻る</a>
+<a  class="btn btn-primary btn-block" href="{{url_for('delete',id=entry.id)}}" >削除</a>
+    <button type="submit" class="btn btn-primary btn-block">送信</button>
+</form>
+{% endblock %}

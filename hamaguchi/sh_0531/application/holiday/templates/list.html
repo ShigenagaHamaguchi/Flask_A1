@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<ul class="list-group list-group-flush">
+    {% for holiday in holidays%}
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-body-title">{{holiday.date}}</h5>
+            <h6 class="card-body-body">{{holiday.text}}</h6>
+        </div>
+    </div>
+    {% else %}
+    投稿がありません
+    {% endfor %}
+</ul>
+{% endblock %}

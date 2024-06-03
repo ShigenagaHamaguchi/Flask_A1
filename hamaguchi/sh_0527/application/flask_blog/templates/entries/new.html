@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="{{url_for('insert_entry')}} " method="post">
+    <div class="mb-3">
+        <label for="InputTitle" class="form-label">タイトル</label>
+        <input type="text" class="form-control" id="InputTitle" name="title" placeholder="ブログタイトルを入力">
+    </div>
+    <div class="mb-3">
+        <label for="InputText" class="form-label">本文</label>
+        <input type="text" class="form-control" id="InputText" name="text" placeholder="ブログ本文を入力">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">送信</button>
+</form>
+{% endblock %}

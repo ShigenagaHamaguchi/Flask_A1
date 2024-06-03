@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="{{url_for('router_holiday')}}" method="post">
+
+    
+    <div class="mb-3">
+        <label for="InputTitle" class="form-label">祝日 日付</label>
+        <input type="date" class="form-control" id="InputDate" min="2000/1/1" max="3000/1/1" name="date" placeholder="ブログタイトルを入力">
+    </div>
+    <div class="mb-3">
+        <label for="InputText" class="form-label">祝日 テキスト</label>
+        <input type="text" class="form-control" id="InputText" name="text" placeholder="祝日名を記入">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block" name="option" value="insert">新規登録・更新</button>
+    <button type="submit" class="btn btn-danger btn-block" name="option"  value="delete">削除</button>
+</form>
+<br>
+    <a class="btn btn-light btn-block" href="{{url_for('show_list')}}">一覧画面へ</a>
+{% endblock %}
